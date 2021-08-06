@@ -2,7 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FoodController;
 
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
@@ -10,3 +12,8 @@ use App\Http\Controllers\UserController;
 // });
 
 Route::apiResource('/v1/user', UserController::class);
+
+Route::apiResource('/v1/food', FoodController::class);
+
+// Route::post('/v1/food', [FoodController::class, 'store']);
+
