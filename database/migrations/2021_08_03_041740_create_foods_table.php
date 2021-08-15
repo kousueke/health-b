@@ -18,6 +18,7 @@ class CreateFoodsTable extends Migration
             $table->string('user_id');
             $table->string('name', 20);
             $table->integer('protein');
+            $table->integer('amount');
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
 //外部キー

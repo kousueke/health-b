@@ -29,7 +29,8 @@ class FoodController extends Controller
   {
     $update = [
       'name' => $request->name,
-      'protein' => $request->protein
+      'protein' => $request->protein,
+      'amount' => $request->amount
     ];
     $item = Food::where('id', $food->id)->update($update);
     if ($item) {

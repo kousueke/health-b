@@ -15,5 +15,5 @@ Route::apiResource('/v1/user', UserController::class);
 
 Route::apiResource('/v1/food', FoodController::class);
 
-// Route::post('/v1/food', [FoodController::class, 'store']);
+Route::apiResource('/v1/daily', DailyController::class);
 
