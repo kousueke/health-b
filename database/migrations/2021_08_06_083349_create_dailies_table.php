@@ -14,7 +14,7 @@ class CreateDailiesTable extends Migration
     public function up()
     {
         Schema::create('dailies', function (Blueprint $table) {
-            $table->string('id');
+            $table->id();
             $table->double('amount');
             $table->date('day');
             $table->string('user_id');
