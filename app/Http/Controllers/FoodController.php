@@ -58,4 +58,12 @@ class FoodController extends Controller
     }
   }
 
+
+  public function show(Request $request)
+  {
+    $item = Food::where('user_id',$request->food)->get();
+      return response()->json([
+        'data' => $item
+      ], 200);
+  }
 }
