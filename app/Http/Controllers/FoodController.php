@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Food;
 use Illuminate\Http\Request;
+use Carbon\Carbon; //Carbonのライブラリを使用
 
 class FoodController extends Controller
 {
@@ -62,6 +63,8 @@ class FoodController extends Controller
   public function show(Request $request)
   {
     $item = Food::where('user_id',$request->food)->get();
+    $today=Carbon::today(); //Carbonを使用し本日のデータを特定
+    $item=Food::whereDate('created_at', $today)->get(); //本日作成されたデータを表示
       return response()->json([
         'data' => $item
       ], 200);
