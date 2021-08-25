@@ -62,9 +62,9 @@ class FoodController extends Controller
 
   public function show(Request $request)
   {
-    $item = Food::where('user_id',$request->food)->get();
     $today=Carbon::today(); //Carbonを使用し本日のデータを特定
     $item=Food::whereDate('created_at', $today)->get(); //本日作成されたデータを表示
+    $item = Food::where('user_id',$request->food)->get();
       return response()->json([
         'data' => $item
       ], 200);
