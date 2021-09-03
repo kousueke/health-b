@@ -14,4 +14,12 @@ class UserController extends Controller
             'data' => $item
         ], 201);
     }
+
+    public function show(Request $request)
+    {
+      $item = User::where('id',$request->user)->get();
+        return response()->json([
+          'data' => $item
+        ], 200);
+    }
 }
